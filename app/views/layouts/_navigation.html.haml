@@ -4,7 +4,7 @@
     = link_to 'Locations', locations_path
   - if user_signed_in?
     %li
-      Logged in as #{current_user.name}
+      = link_to "Logged in as #{current_user.name}", signout_path
     %li
       = link_to 'Logout', signout_path
   - else
