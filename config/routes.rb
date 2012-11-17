@@ -1,7 +1,7 @@
 Stompd::Application.routes.draw do
-  resources :tricks
-
-  resources :locations
+  resources :locations do
+    resources :tricks
+  end
 
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
