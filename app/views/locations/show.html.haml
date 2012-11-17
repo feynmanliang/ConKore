@@ -3,3 +3,5 @@
   Description: #{@location.description}
 %p
   #{@location.lat}, #{@location.long}
+%p
+  = link_to 'Tricks at this location', @location.tricks
