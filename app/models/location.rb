@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  #attr_accessible :description, :lat, :long, :title
+  attr_accessible :description, :lat, :long, :title
 
   validate :title, :presence => true
   validate :lat, :long, { :presence => true, :numericality => true }
