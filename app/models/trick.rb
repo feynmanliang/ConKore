@@ -7,16 +7,25 @@ class Trick < ActiveRecord::Base
 
   default_scope order: 'tricks.created_at DESC'
 
-  def youtube_embed
-    youtube_url = self.video_link
+  def youtube_thumbnail
+    youtube_id = extract_youtube_id(self.video_link)
+
+    %Q{http://img.youtube.com/vi/#{ youtube_id }.jpg}
+  end
+
+  def youtube_video
+    youtube_id = extract_youtube_id(self.video_link)
+
+    %Q{http://www.youtube.com/embed/#{ youtube_id }}
+  end
+
+  def extract_youtube_id(youtube_url)
     if youtube_url[/youtu\.be\/([^\?]*)/]
-      youtube_id = $1
+      $1
     else
       # Regex from # http://stackoverflow.com/questions/3452546/javascript-regex-how-to-get-youtube-video-id-from-url/4811367#4811367
       youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
-      youtube_id = $5
+      $5
     end
-
-    %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
   end
 end

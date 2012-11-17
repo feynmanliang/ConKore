@@ -6,6 +6,6 @@
   = link_to @trick.location.title, location_path(@trick.location.id)
   on #{@trick.created_at}
 %p 
-  = @trick.youtube_embed.html_safe
+  %iframe{:title => "YouTube video player", :width => "640", :height => "390", :src => "#{ @trick.youtube_video }", :frameborder =>"0", :allowfullscreen=>true}
 %p
   #{@trick.description}
