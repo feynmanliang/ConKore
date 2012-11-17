@@ -10,7 +10,7 @@ class Trick < ActiveRecord::Base
   def youtube_thumbnail
     youtube_id = extract_youtube_id(self.video_link)
 
-    %Q{http://img.youtube.com/vi/#{ youtube_id }.jpg}
+    %Q{http://img.youtube.com/vi/#{ youtube_id }/2.jpg}
   end
 
   def youtube_video
