@@ -1,4 +1,6 @@
 Stompd::Application.routes.draw do
+  resources :tricks
+
   resources :locations
 
   root :to => "home#index"
