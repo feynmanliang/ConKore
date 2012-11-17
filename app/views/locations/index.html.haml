@@ -1,14 +1,14 @@
+- content_for :head do
+  = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB7f2A7fhm-C0t6GTU_rKguTK9jURXtUv8&sensor=false'
+
+- content_for :javascripts do
+  = javascript_include_tag 'locations_index.js'
+
 %h3 Locations
-- @locations.each do |location|
-  = link_to location.title, location
-  %ul
-    %li
-      = location.description
-    %li
-      = location.lat
-    %li
-      = location.long
-    %li
-      = location.created_at
+
+:javascript
+  var json = #{@locations.to_json}
+
+%div#map_canvas{:style => "position: absolute; left: 10px; top: 300px;width: 90%;height: 60%;"}
 
 = link_to 'New Location', new_location_path, class: "btn btn-primary"

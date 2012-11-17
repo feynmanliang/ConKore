@@ -16,3 +16,4 @@
 // require_tree .
 // locations.js
 // locations_show.js
+// locations_index.js
