@@ -49,3 +49,5 @@ gem "bootstrap-sass", ">= 2.1.1.0"
 gem "omniauth", ">= 1.1.1"
 gem "omniauth-facebook"
 gem "simple_form", ">= 2.0.4"
+gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
