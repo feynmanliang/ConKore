@@ -1,5 +1,5 @@
 %h3 #{@trick.title}
 %p
-  By #{@trick.user_id} at #{@trick.location.title} on #{@trick.created_at}
+  By #{@trick.user.name} at #{@trick.location.title} on #{@trick.created_at}
 %p
   #{@trick.description}
