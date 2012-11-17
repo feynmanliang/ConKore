@@ -19,5 +19,7 @@
 %ul
   - @tricks.each do |trick|
     %li
+      = image_tag trick.youtube_thumbnail
+      %br/
       = link_to trick.title, location_trick_path(trick)
 = link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"

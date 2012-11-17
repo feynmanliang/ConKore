@@ -1,0 +1,2 @@
+class TrickCommentsController < ApplicationController
+end

@@ -1,4 +1,5 @@
 class TricksController < ApplicationController
+  helper_method :youtube_thumbnail, :youtube_embed
   def show
     @trick = Trick.find(params[:id])
 
