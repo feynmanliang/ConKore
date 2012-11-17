@@ -3,6 +3,14 @@
   Description: #{@location.description}
 %p
   #{@location.lat}, #{@location.long}
+%h5 Photos of location
+%ul
+  - @photos.each do |photo|
+    %li
+      = image_tag photo.url
+%p
+  = link_to 'Add Photo', new_location_asset_path(@location) , class: "btn btn-primary"
+
 
 %h5 Tricks at this location
 %ul

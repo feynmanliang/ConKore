@@ -1,0 +1,2 @@
+module LocationAssetsHelper
+end
