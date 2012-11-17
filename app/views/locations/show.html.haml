@@ -5,9 +5,9 @@
   #{@location.lat}, #{@location.long}
 %h5 Photos of location
 %ul
-  - @photos.each do |photo|
+  - @location_assets.each do |asset|
     %li
-      = image_tag photo.url
+      = image_tag asset.url
 %p
   = link_to 'Add Photo', new_location_asset_path(@location) , class: "btn btn-primary"
 
