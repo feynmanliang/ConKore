@@ -1,0 +1,8 @@
+%h3 Locations
+- @locations.each do |locations|
+  = link_to location.title, location
+  %ul
+    %li location.description
+    %li location.lat
+    %li location.long
+    %li location.created_at

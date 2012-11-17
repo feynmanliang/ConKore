@@ -1,5 +1,7 @@
 = link_to "Stompd", root_path, :class => 'brand'
 %ul.nav
+  %li
+    = link_to 'Locations', locations_path
   - if user_signed_in?
     %li
       Logged in as #{current_user.name}
