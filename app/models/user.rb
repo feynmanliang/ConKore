@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :provider, :uid, :name, :email, :avatar
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_many :tricks
+  attr_accessible :provider, :uid, :name, :email
+  has_many :tricks, :dependent => :nullify
 
   def self.create_with_omniauth(auth)
     create! do |user|

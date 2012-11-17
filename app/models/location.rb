@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
   attr_accessible :description, :lat, :long, :title
-  has_many :tricks
-  has_many :location_assets
+  has_many :tricks, :dependent => :destroy
+  has_many :location_comments, :dependent => :destroy
 
   validates_presence_of :title
   validates_presence_of :lat, :long
