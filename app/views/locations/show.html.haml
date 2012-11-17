@@ -3,5 +3,10 @@
   Description: #{@location.description}
 %p
   #{@location.lat}, #{@location.long}
-%p
-  = link_to 'Tricks at this location', @location.tricks
+
+%h5 Tricks at this location
+%ul
+  - @tricks.each do |trick|
+    %li
+      = link_to trick.title, location_trick_path(trick)
+= link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"

@@ -1,15 +1,6 @@
 class TricksController < ApplicationController
-  def index
-    @tricks = Tricks.all
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @tricks}
-    end
-  end
-
   def show
-    @trick = Location.find(params[:id])
+    @trick = Trick.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -18,7 +9,8 @@ class TricksController < ApplicationController
   end
 
   def new
-    @trick = Location.new
+    @location = Location.find(params[:location_id])
+    @trick = Trick.new
 
     respond_to do |format|
       format.html
@@ -27,12 +19,13 @@ class TricksController < ApplicationController
   end
 
   def create
-    @trick = Location.new(params[:tricks])
+    @location = Location.find(params[:location_id])
+    @trick = @location.tricks.new(params[:trick])
 
     respond_to do |format|
-      if @trick.valid? && @trick.save
-        format.html { redirect_to @trick, notice: 'Trick was successfully created.' }
-        format.json { render json: @trick , status: :created, location: @trick}
+      if @trick.save
+        format.html { redirect_to @location, notice: 'Trick was successfully created.' }
+        format.json { render json: @trick, status: :created, location: @trick}
       else
         format.html { render action: "new" }
         format.json { render json: @trick.errors, status: :unprocessable_entity }

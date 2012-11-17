@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @tricks = @location.tricks
 
     respond_to do |format|
       format.html
