@@ -1,4 +1,4 @@
-Stompd::Application.routes.draw do
+Concore::Application.routes.draw do
   resources :locations do
     resources :tricks
   end
