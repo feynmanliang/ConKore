@@ -1,2 +1,0 @@
-class LocationCommentsController < ApplicationController
-end

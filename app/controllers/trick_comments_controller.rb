@@ -1,2 +1,0 @@
-class TrickCommentsController < ApplicationController
-end

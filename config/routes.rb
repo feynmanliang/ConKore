@@ -1,9 +1,5 @@
 Concore::Application.routes.draw do
 
-  resources :trick_comments
-
-  resources :location_comments
-
   resources :locations do
     resources :location_assets, :as => :assets
     resources :tricks
