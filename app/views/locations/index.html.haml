@@ -1,8 +1,14 @@
 %h3 Locations
-- @locations.each do |locations|
+= link_to 'New Location', new_location_path, class: "btn btn-primary"
+%br/
+- @locations.each do |location|
   = link_to location.title, location
   %ul
-    %li location.description
-    %li location.lat
-    %li location.long
-    %li location.created_at
+    %li
+      = location.description
+    %li
+      = location.lat
+    %li
+      = location.long
+    %li
+      = location.created_at
