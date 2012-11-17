@@ -1,7 +1,5 @@
-= @trick.title
-= @trick.description
-= @trick.location_id
 = simple_form_for [@location, @trick] do |f|
   = f.input :title
   = f.input :description
+  = f.input :user_id
   = f.button :submit

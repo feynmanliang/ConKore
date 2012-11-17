@@ -11,6 +11,7 @@ class TricksController < ApplicationController
   def new
     @location = Location.find(params[:location_id])
     @trick = Trick.new
+    @trick.user_id = session[:user_id]
 
     respond_to do |format|
       format.html
@@ -21,6 +22,7 @@ class TricksController < ApplicationController
   def create
     @location = Location.find(params[:location_id])
     @trick = @location.tricks.new(params[:trick])
+    @trick.user_id = session[:user_id]
 
     respond_to do |format|
       if @trick.save

@@ -1,9 +1,9 @@
 class Trick < ActiveRecord::Base
-  attr_accessible :description, :location_id, :title
+  attr_accessible :title, :description, :location_id, :user_id
+  belongs_to :user
   belongs_to :location
 
-  validates_presence_of :title
-  validates_presence_of :location_id
+  validates_presence_of :title, :location_id, :user_id
 
   default_scope order: 'tricks.created_at DESC'
 end
