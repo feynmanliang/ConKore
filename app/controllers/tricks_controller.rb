@@ -46,4 +46,28 @@ class TricksController < ApplicationController
   def destroy
 
   end
+
+  private
+
+  def youtube_embed
+    youtube_id = extract_youtube_id(self.video_link)
+
+    %Q{<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+  end
+
+  def youtube_thumnail
+    youtube_id = extract_youtube_id(self.video_link)
+
+    image_tag "http://img.youtube.com/vi/#{ youtube_id }.jpg"
+  end
+
+  def extract_youtube_id(youtube_url)
+    if youtube_url[/youtu\.be\/([^\?]*)/]
+      $1
+    else
+      # Regex from # http://stackoverflow.com/questions/3452546/javascript-regex-how-to-get-youtube-video-id-from-url/4811367#4811367
+      youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
+      $5
+    end
+  end
 end
