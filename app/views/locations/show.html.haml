@@ -1,8 +1,17 @@
+- content_for :head do
+  = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB7f2A7fhm-C0t6GTU_rKguTK9jURXtUv8&sensor=false'
+
+- content_for :javascripts do
+  = javascript_include_tag 'locations_show.js'
+
 %h3 #{@location.title}
 %p
   Description: #{@location.description}
-%p
-  #{@location.lat}, #{@location.long}
+:javascript
+  var lat = #{@location.lat}
+  var lon = #{@location.long}
+%div#map_canvas{:style => "position: absolute; left: 300px; top: 300px;width: 40%;height: 40%;"}
+-# #{@location.lat}, #{@location.long}
 %h5 Photos of location
 %ul
   - @location_assets.each do |asset|
