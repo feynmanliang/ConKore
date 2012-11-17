@@ -14,12 +14,6 @@
 -# #{@location.lat}, #{@location.long}
 %h5 Photos of location
 %ul
-  - @location_assets.each do |asset|
-    %li
-      = image_tag asset.url
-%p
-  = link_to 'Add Photo', new_location_asset_path(@location) , class: "btn btn-primary"
-
 
 %h5 Tricks at this location
 %ul

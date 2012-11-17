@@ -3,3 +3,9 @@
   User: #{@user.name}
 %p
   Email: #{@user.email if @user.email}
+
+%h4 Tricks
+%ul
+  - @tricks.each do |trick|
+    %li
+      = link_to trick.title, location_trick_path(trick)
