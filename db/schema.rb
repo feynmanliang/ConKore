@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20121117222727) do
 
-  create_table "location_assets", :force => true do |t|
-    t.integer  "location_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "locations", :force => true do |t|
     t.string   "title"
     t.string   "description"
