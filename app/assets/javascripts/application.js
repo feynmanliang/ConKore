@@ -14,7 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap
 // require_tree .
-// locations.js
-// locations_show.js
-// locations_index.js
-// home_index.js
