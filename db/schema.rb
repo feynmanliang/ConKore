@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117235539) do
+ActiveRecord::Schema.define(:version => 20121118005626) do
 
   create_table "locations", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20121117235539) do
     t.decimal  "long",        :precision => 10, :scale => 6
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
+    t.string   "image_url"
   end
 
   create_table "trick_comments", :force => true do |t|

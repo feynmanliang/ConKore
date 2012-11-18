@@ -6,11 +6,13 @@
 
 %h3 #{@location.title}
 %p
+  = image_tag(@location.image_url)
+%p
   Description: #{@location.description}
 :javascript
   var lat = #{@location.lat}
   var lon = #{@location.long}
-%div#map_canvas{:style => "position: absolute; left: 300px; top: 300px;width: 40%;height: 40%;"}
+%div.span4#map_canvas{:style => "position: absolute; left: 300px; top: 300px;width: 40%;height: 40%;"}
 -# #{@location.lat}, #{@location.long}
 
 %h5 Tricks at this location
