@@ -32,7 +32,7 @@
     %button{:type => 'button', :class => 'close', 'data-dismiss' => 'modal', 'aria-hidden' => true}x
     %h3.myModalLabel Add Comment
   .modal-body
-    = simple_form_for [@trick, @trick.trick_comments.new] do |f|
+    = simple_form_for [@trick.location, @trick, @trick.trick_comments.new] do |f|
       = f.input :body
       = f.input :rating, :collection => 0..10
       = f.button :submit

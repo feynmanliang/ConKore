@@ -1,4 +1,13 @@
 class TricksController < ApplicationController
+  def index
+    @tricks = Trick.first(16).sort_by(&:rating).reverse
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @tricks }
+    end
+  end
+
   def show
     @trick = Trick.find(params[:id])
     @comments = @trick.trick_comments
@@ -27,7 +36,7 @@ class TricksController < ApplicationController
 
     respond_to do |format|
       if @trick.save
-        format.html { redirect_to @trick, notice: 'Trick was successfully created.' }
+        format.html { redirect_to location_trick_path(@location, @trick), notice: 'Trick was successfully created.' }
         format.json { render json: @trick, status: :created, location: @trick}
       else
         format.html { render action: "new" }

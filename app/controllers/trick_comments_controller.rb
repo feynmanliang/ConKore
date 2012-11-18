@@ -6,7 +6,7 @@ class TrickCommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @trick, notice: 'Trick comment was successfully created.' }
+        format.html { redirect_to location_trick_path(@trick.location, @trick), notice: 'Trick comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @trick}
       else
         format.html { render @trick }

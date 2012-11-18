@@ -1,12 +1,12 @@
 Concore::Application.routes.draw do
 
 
-  resources :locations do
-    resources :tricks
-  end
+  match '/tricks' => "tricks#index"
 
-  resources :tricks do
-    resources :trick_comments
+  resources :locations do
+    resources :tricks do
+      resources :trick_comments
+    end
   end
 
 
