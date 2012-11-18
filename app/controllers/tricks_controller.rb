@@ -1,6 +1,6 @@
 class TricksController < ApplicationController
   def index
-    @tricks = Trick.first(16).sort_by(&:rating).reverse
+    @tricks = Trick.first(6).sort_by(&:rating).reverse
 
     respond_to do |format|
       format.html

@@ -39,7 +39,7 @@ function set_data(temp){
     $("#name").html(json[temp.extra].title);
     if(json[temp.extra].description)
         $("#description").html(json[temp.extra].description);
-    $("#more").html("See more");
+    $("#more").html("More details");
     $("#more").click(function(){
         window.location='/locations/'+json[temp.extra].id;
     });
