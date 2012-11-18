@@ -13,9 +13,7 @@ users = User.create([
     email: "feynman.liang@gmail.com",
     profile_image: "https://sphotos-a.xx.fbcdn.net/hphotos-ash4/418689_10151061229281026_1274063087_n.jpg",
     biography: "Founded a student-owned business providing summer and abroad
-    storage. Integrated PayPal IPN to www.mastorage.com, oversaw company budget
-    and spending, provided customer support and invoicing, maintained customer
-    database, migrated operations to Google Apps",
+    storage. Integrated PayPal IPN to www.mastorage.com",
       board: "Trickwood",
       trucks: "Independent",
       bearings: "Bones Swiss",
@@ -28,11 +26,7 @@ users = User.create([
     uid: "644816025", 
     profile_image: "http://siriusbuzz.com/wp-content/uploads/2012/09/Tony-Hawk.jpg", 
     biography: "Anthony Frank \"Tony\" Hawk (born May 12, 1968), nicknamed \"The
-   Birdman\", is an American professional skateboarder and actor. Hawk is well
-   known for completing the first documented 900 (900 degree aerial spin) and
-   his licensed video game titles, distributed by Activision.[1] He is widely
-   considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\n",
+   Birdman\", is an American professional skateboarder and actor.",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
@@ -49,11 +43,7 @@ users = User.create([
     bearings: "Bones Reds", 
     wheels: "Spitfire",
     biography: "Anthony Frank \"Tony\" Hawk (born May 12, 1968), nicknamed \"The
-   Birdman\", is an American professional skateboarder and actor. Hawk is well
-   known for completing the first documented 900 (900 degree aerial spin) and
-   his licensed video game titles, distributed by Activision.[1] He is widely
-   considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\n",
+   Birdman\", is an American professional skateboarder and actor.",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
@@ -70,11 +60,7 @@ users = User.create([
     bearings: "Bones Reds", 
     wheels: "Spitfire",
     biography: "Anthony Frank \"Tony\" Hawk (born May 12, 1968), nicknamed \"The
-   Birdman\", is an American professional skateboarder and actor. Hawk is well
-   known for completing the first documented 900 (900 degree aerial spin) and
-   his licensed video game titles, distributed by Activision.[1] He is widely
-   considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\n",
+   Birdman\", is an American professional skateboarder and actor.",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
