@@ -3,6 +3,7 @@ $navbarBackground: lighten($navbarBackgroundHighlight, 20%);
 $navbarLinkColorHover: #f89306;
 $btnPrimaryBackground: #f89306;
 $navbarBrandColor: #f89306;
+$dropdownLinkBackgroundActive:  #f89306;
 $btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 05%) !default;
 
 @import "bootstrap";
