@@ -15,10 +15,7 @@ users = User.create([
     biography: "Founded a student-owned business providing summer and abroad
     storage. Integrated PayPal IPN to www.mastorage.com, oversaw company budget
     and spending, provided customer support and invoicing, maintained customer
-    database, migrated operations to Google Apps, implemented a PHP/MySQL
-    helpdesk ticketing system.Molecular Biology, including creation of cKO
-    plasmid. Morphology, including immunohistochemistry, confocal microscopy,
-      mouse inner-ear dissections, organotypic cultures, SEM.",
+    database, migrated operations to Google Apps",
       board: "Trickwood",
       trucks: "Independent",
       bearings: "Bones Swiss",
@@ -35,12 +32,7 @@ users = User.create([
    known for completing the first documented 900 (900 degree aerial spin) and
    his licensed video game titles, distributed by Activision.[1] He is widely
    considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\nIn 2002, he created the \"Boom Boom
-   HuckJam\", an extreme sports exhibition and tour that was launched in Las
-   Vegas. Throughout his career, Hawk has made numerous appearances in films,
-   other media, and his own series of video games. He has also been involved in
-   various philanthropic activities, including his own Tony Hawk Foundation
-   that helps to build skateparks in underprivileged areas.",
+   modern vertical skateboarding.[2]\r\n",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
@@ -61,12 +53,7 @@ users = User.create([
    known for completing the first documented 900 (900 degree aerial spin) and
    his licensed video game titles, distributed by Activision.[1] He is widely
    considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\nIn 2002, he created the \"Boom Boom
-   HuckJam\", an extreme sports exhibition and tour that was launched in Las
-   Vegas. Throughout his career, Hawk has made numerous appearances in films,
-   other media, and his own series of video games. He has also been involved in
-   various philanthropic activities, including his own Tony Hawk Foundation
-   that helps to build skateparks in underprivileged areas.",
+   modern vertical skateboarding.[2]\r\n",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
@@ -87,12 +74,7 @@ users = User.create([
    known for completing the first documented 900 (900 degree aerial spin) and
    his licensed video game titles, distributed by Activision.[1] He is widely
    considered to be one of the most successful and influential pioneers of
-   modern vertical skateboarding.[2]\r\nIn 2002, he created the \"Boom Boom
-   HuckJam\", an extreme sports exhibition and tour that was launched in Las
-   Vegas. Throughout his career, Hawk has made numerous appearances in films,
-   other media, and his own series of video games. He has also been involved in
-   various philanthropic activities, including his own Tony Hawk Foundation
-   that helps to build skateparks in underprivileged areas.",
+   modern vertical skateboarding.[2]\r\n",
    board: "Element", 
    trucks: "Crux", 
    bearings: "Bones Reds", 
@@ -191,9 +173,9 @@ tricks = Trick.create([
 tricks.each do |trick|
   3.times do
     TrickComment.create({
-      user_id: rand(1..(users.count)),
+      user_id: rand([1..(users.count)]),
       trick_id: trick.id,
-      rating: rand(1..10),
+      rating: rand([1..10]),
       body: "You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out."
     })
   end
