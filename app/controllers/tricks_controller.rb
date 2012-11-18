@@ -45,6 +45,18 @@ class TricksController < ApplicationController
     end
   end
 
+  def post_fb()
+      trick = Trick.find(params[:trick_id])
+      user = FbGraph::User.new('me', :access_token => session[:token])
+       user.feed!(
+  :message => 'Check out my latest trick!',
+  :picture => trick.youtube_thumbnail,
+  :link => request.referer,
+  :name => trick.title,
+  :description => trick.description
+) 
+  end
+
   def edit
 
   end
