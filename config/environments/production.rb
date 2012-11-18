@@ -64,4 +64,20 @@ Conkore::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  # Heroku REQUIRES this to be false
+  config.assets.initialize_on_precompile = false
+
+  # Include any files that you want to link to directly from your templates directly.
+  config.assets.precompile += ['mobile.css', 'mobile.js', 'home_index.js', 'locations_index.js', 'locations_show.js', 'locations.js', 'users_show.js']
+
+  # Not required, but a good best-practice for performance.
+  # This setting will compress your assets as much as possible using YUI and Uglifier by default
+  config.assets.compress = true
+
+  # Allow fingerprinting of asset filenames - good for caching.
+  config.assets.digest = true
+
+  # Configure the sendfile headers for Heroku.  "X-Accel-Redirect" is also a good value for this since Heroku use Nginx.
+  config.action_dispatch.x_sendfile_header = nil
 end
