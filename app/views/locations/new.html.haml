@@ -17,6 +17,5 @@
 .span6
   Search for Location
   %p
-    %input#address
-    %input{:onclick => "getAddress()",:type => "button"}
+    %input#address{ :onkeypress => "handleKeyPress(event)" }
   %div#map_canvas{:style => "width: 100%; height: 450px;"}

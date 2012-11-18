@@ -6,7 +6,7 @@ var marker = null
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var mapOptions = {
-        center: new google.maps.LatLng(-34.397, 150.644),
+        center: new google.maps.LatLng(42.34, -71.0927),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -35,6 +35,13 @@ $('#location_long').val(marker.position.Za);
 $(document).ready(function() {
     initialize();
 });
+
+function handleKeyPress(e) {
+var key=e.keyCode || e.which;
+if (key==13){
+    getAddress();
+}
+}
 
 function getAddress() {
         var address = document.getElementById('address').value;
