@@ -9,7 +9,7 @@ class Trick < ActiveRecord::Base
   default_scope order: 'tricks.created_at DESC'
 
   def rating
-    trick_comments.average(:rating)
+    trick_comments.average(:rating) || 0
   end
 
   def youtube_thumbnail
