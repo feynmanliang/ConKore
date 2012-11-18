@@ -1,3 +1,18 @@
+$navbarBackgroundHighlight: #000000;
+$navbarBackground: lighten($navbarBackgroundHighlight, 20%);
+
 @import "bootstrap";
-body { padding-top: 60px; }
+body { 
+  background-image: url('/assets/concrete_wall.png');
+  padding-top: 60px; 
+}
+
+.content {
+  background-color: transparent;
+  box-shadow: none;
+}
+.hero-unit {
+  background-color: inherit;
+}
+
 @import "bootstrap-responsive";
