@@ -2,8 +2,6 @@ class TricksController < ApplicationController
   def show
     @trick = Trick.find(params[:id])
     @comments = @trick.trick_comments
-    @new_comment = @trick.trick_comments.new
-    @new_comment.user_id = session[:user_id]
 
     respond_to do |format|
       format.html
@@ -29,7 +27,7 @@ class TricksController < ApplicationController
 
     respond_to do |format|
       if @trick.save
-        format.html { redirect_to location_trick_path(@trick), notice: 'Trick was successfully created.' }
+        format.html { redirect_to @trick, notice: 'Trick was successfully created.' }
         format.json { render json: @trick, status: :created, location: @trick}
       else
         format.html { render action: "new" }

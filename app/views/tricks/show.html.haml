@@ -20,7 +20,7 @@
       %br/
       = comment.body
 
-= simple_form_for [@trick, @new_comment] do |f|
+= simple_form_for [@trick, @trick.trick_comments.new] do |f|
   = f.input :body
   = f.input :rating, :collection => 0..10
   = f.button :submit
