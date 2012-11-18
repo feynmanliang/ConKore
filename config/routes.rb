@@ -2,6 +2,7 @@ Concore::Application.routes.draw do
 
 
   match '/tricks' => "tricks#index"
+  match '/trick_to_fb' => "tricks#post_fb"
 
   resources :locations do
     resources :tricks do
