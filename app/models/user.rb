@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :provider, :uid, :name, :email
+  attr_accessible :provider, :uid, :name, :email, :profile_image, :biography, :board, :trucks, :bearings, :wheels
   has_many :tricks, :dependent => :nullify
   has_many :comments, :foreign_key => 'trick_id', :class_name => 'TrickComment'
   has_many :location_comments, :dependent => :nullify

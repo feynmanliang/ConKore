@@ -1,5 +1,14 @@
-= form_for(@user) do |f|
-  = f.label :email
-  = f.text_field :email
-  %br/
-  = f.submit "Sign in"
+.span12
+  %h3 Edit your profile
+  = simple_form_for(@user) do |f|
+    = f.input :email
+    = f.label :link_to_profile_image
+    = f.text_field :profile_image
+    = f.label :about_me
+    = f.text_area :biography, :rows => 6
+    = f.input :board
+    = f.input :trucks
+    = f.input :bearings
+    = f.input :wheels
+    %br/
+    = f.submit "Edit Profile"
