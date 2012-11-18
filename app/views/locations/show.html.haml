@@ -5,20 +5,22 @@
   = javascript_include_tag 'locations_show.js'
 
 %h3 #{@location.title}
-%p
-  = image_tag(@location.image_url)
-%p
-  Description: #{@location.description}
+.span6
+  = image_tag @location.image_url, :id => :locationImage
 :javascript
   var lat = #{@location.lat}
   var lon = #{@location.long}
-%div.span4#map_canvas{:style => "position: absolute; left: 300px; top: 300px;width: 40%;height: 40%;"}
+.span4
+  #map_canvas
 -# #{@location.lat}, #{@location.long}
 
-%h5 Tricks at this location
-%ul
-  - @tricks.each do |trick|
-    %li
-      = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
-      = link_to trick.title, location_trick_path(trick)
-= link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"
+.span12
+  %p
+    Description: #{@location.description}
+  %h5 Tricks at this location
+  %ul
+    - @tricks.each do |trick|
+      %li
+        = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
+        = link_to trick.title, location_trick_path(trick)
+  = link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"
