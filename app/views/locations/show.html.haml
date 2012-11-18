@@ -12,14 +12,11 @@
   var lon = #{@location.long}
 %div#map_canvas{:style => "position: absolute; left: 300px; top: 300px;width: 40%;height: 40%;"}
 -# #{@location.lat}, #{@location.long}
-%h5 Photos of location
-%ul
 
 %h5 Tricks at this location
 %ul
   - @tricks.each do |trick|
     %li
-      = image_tag trick.youtube_thumbnail
-      %br/
+      = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
       = link_to trick.title, location_trick_path(trick)
 = link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"
