@@ -9,7 +9,10 @@
 :javascript
   var json = #{@locations.to_json}
 
--# %div#map_canvas{:style => "position: absolute; left: 10px; top: 300px;width: 90%;height: 60%;"}
-%div#map_canvas{:style => "width: 90%;height: 800px;", :class => "span12"}
+%div#map_canvas{:style => "width: 60%;height: 400px;", :class => "span4"}
 
--# = link_to 'New Location', new_location_path, class: "btn btn-primary"
+%div.span4
+  %h3#name
+  %h4#description
+  %button#more{:class => "btn btn-primary"}
+  = link_to 'New Location', new_location_path, class: "btn btn-primary"
