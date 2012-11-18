@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :email
   has_many :tricks, :dependent => :nullify
-  has_many :trick_comments, :dependent => :nullify
+  has_many :comments, :foreign_key => 'trick_id', :class_name => 'TrickComment'
   has_many :location_comments, :dependent => :nullify
 
   def self.create_with_omniauth(auth)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117222727) do
+ActiveRecord::Schema.define(:version => 20121117235539) do
 
   create_table "locations", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(:version => 20121117222727) do
     t.decimal  "long",        :precision => 10, :scale => 6
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
+  end
+
+  create_table "trick_comments", :force => true do |t|
+    t.integer  "trick_id"
+    t.integer  "user_id"
+    t.string   "body"
+    t.integer  "rating"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tricks", :force => true do |t|

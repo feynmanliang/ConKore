@@ -1,11 +1,14 @@
 Concore::Application.routes.draw do
 
-  resources :trick_comments
 
   resources :locations do
-    resources :location_assets, :as => :assets
     resources :tricks
   end
+
+  resources :tricks do
+    resources :trick_comments
+  end
+
 
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]

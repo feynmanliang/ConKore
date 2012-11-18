@@ -9,3 +9,18 @@
   %iframe{:title => "YouTube video player", :width => "640", :height => "390", :src => "#{ @trick.youtube_video }", :frameborder =>"0", :allowfullscreen=>true}
 %p
   #{@trick.description}
+
+%h5 Comments
+%ul
+  - @comments.each do |comment|
+    %li
+      = comment.user.name
+      %br/
+      = comment.rating
+      %br/
+      = comment.body
+
+= simple_form_for [@trick, @new_comment] do |f|
+  = f.input :body
+  = f.input :rating, :collection => 0..10
+  = f.button :submit
