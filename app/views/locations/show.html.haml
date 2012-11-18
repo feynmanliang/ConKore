@@ -18,9 +18,10 @@
   %p
     Description: #{@location.description}
   %h5 Tricks at this location
-  %ul
-    - @tricks.each do |trick|
-      %li
-        = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
-        = link_to trick.title, location_trick_path(trick)
+- @tricks.each do |trick|
+  .span2
+    = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
+    %br/
+    = link_to trick.title, location_trick_path(trick)
+.span12
   = link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"
