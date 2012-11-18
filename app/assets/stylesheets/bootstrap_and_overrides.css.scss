@@ -12,7 +12,18 @@ body {
   box-shadow: none;
 }
 .hero-unit {
-  background-color: inherit;
+  background-color: white;
+  opacity:0.6;
+}
+div.hero-unit p {
+    // font-color: black;
+    font-weight:bold;
+  color:#000000;
+}
+div.hero-unit h1 {
+    // font-color: black;
+    font-weight:bold;
+  color:#000000;
 }
 
 @import "bootstrap-responsive";
