@@ -1,9 +1,8 @@
 %h3 #{@trick.title}
 %p
-  Rating:
+  Rating: #{@trick.rating}
   .progress
     .bar{:style => "width: #{@trick.rating * 10}%"}
-  %br/
   By 
   = link_to @trick.user.name, user_path(@trick.user.id)
   at 
@@ -22,10 +21,18 @@
     .media-body
       %h5.media-heading
         = comment.user.name
-      %p= comment.rating
+      Rating: #{comment.rating}
     %p= comment.body
 
-= simple_form_for [@trick, @trick.trick_comments.new] do |f|
-  = f.input :body
-  = f.input :rating, :collection => 0..10
-  = f.button :submit
+%a{:href => "#myModal", :role => "button", :class => "btn", 'data-toggle' => "modal"}
+  Add Comment
+
+%div{:id => "myModal", :class => "modal hide fade", :tabindex => "-1", :role => "dialog", 'aria-labelledby' => 'myModalLabel', 'aria-hidden' => 'true'}
+  .modal-header
+    %button{:type => 'button', :class => 'close', 'data-dismiss' => 'modal', 'aria-hidden' => true}x
+    %h3.myModalLabel Add Comment
+  .modal-body
+    = simple_form_for [@trick, @trick.trick_comments.new] do |f|
+      = f.input :body
+      = f.input :rating, :collection => 0..10
+      = f.button :submit
