@@ -10,9 +10,12 @@
   on #{@trick.created_at}
 %p 
   %iframe{:title => "YouTube video player", :width => "640", :height => "390", :src => "#{ @trick.youtube_video }", :frameborder =>"0", :allowfullscreen=>true}
-%p
-  #{@trick.description}
-  .btn-primary.btn= link_to "share on facebook", :controller => :tricks, :action => :post_fb, :params => { :trick_id => @trick.id }
+
+- if current_user == @trick.user
+  %p
+    #{@trick.description}
+    %br/
+    = link_to "share on facebook", {:controller => :tricks, :action => :post_fb, :params => { :trick_id => @trick.id }}, :class => 'btn btn-primary'
 
 %h4 Comments
 %ul.media-list
