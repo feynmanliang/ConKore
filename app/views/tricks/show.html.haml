@@ -1,8 +1,10 @@
 %h3 #{@trick.title}
 %p
-  Rated
-  = @trick.rating
-  by 
+  Rating:
+  .progress
+    .bar{:style => "width: #{@trick.rating * 10}%"}
+  %br/
+  By 
   = link_to @trick.user.name, user_path(@trick.user.id)
   at 
   = link_to @trick.location.title, location_path(@trick.location.id)
@@ -12,15 +14,16 @@
 %p
   #{@trick.description}
 
-%h5 Comments
-%ul
+%h4 Comments
+%ul.media-list
   - @comments.each do |comment|
-    %li
-      = comment.user.name
-      %br/
-      = comment.rating
-      %br/
-      = comment.body
+    %li.media
+      %a.pull-left
+    .media-body
+      %h5.media-heading
+        = comment.user.name
+      %p= comment.rating
+    %p= comment.body
 
 = simple_form_for [@trick, @trick.trick_comments.new] do |f|
   = f.input :body
