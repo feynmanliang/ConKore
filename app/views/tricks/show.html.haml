@@ -20,7 +20,7 @@
       %a.pull-left
     .media-body
       %h5.media-heading
-        = comment.user.name
+        = link_to comment.user.name, user_path(comment.user.id)
       Rating: #{comment.rating}
     %p= comment.body
 
