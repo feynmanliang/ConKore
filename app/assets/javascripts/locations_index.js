@@ -43,7 +43,6 @@ function set_data(temp){
     $("#more").click(function(){
         window.location='/locations/'+json[temp.extra].id;
     });
-    $("#imag").attr("src", "");
     $("#imag").attr("src", json[temp.extra].image_url);
 
 }
