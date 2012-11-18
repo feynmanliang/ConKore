@@ -37,8 +37,12 @@
     - @tricks.each do |trick|
       %li.span2
         .thumbnail
-          %h4= link_to trick.title, location_trick_path(trick)
-          = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
+          %h4= link_to (trick.title + ' - ' + trick.rating.to_s[0..3]), location_trick_path(trick.location, trick)
+          %p 
+            = link_to trick.user.name, user_path(trick.user)
+            at
+            = link_to trick.location.title, location_path(trick.location)
+          = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick.location, trick)
 
 
 .span5
