@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Concore::Application.load_tasks
+Conkore::Application.load_tasks

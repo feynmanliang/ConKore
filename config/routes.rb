@@ -1,4 +1,4 @@
-Concore::Application.routes.draw do
+Conkore::Application.routes.draw do
 
 
   match '/tricks' => "tricks#index"
