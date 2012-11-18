@@ -1,5 +1,9 @@
 $navbarBackgroundHighlight: #000000;
 $navbarBackground: lighten($navbarBackgroundHighlight, 20%);
+$navbarLinkColorHover: #f89306;
+$btnPrimaryBackground: #f89306;
+$navbarBrandColor: #f89306;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 05%) !default;
 
 @import "bootstrap";
 body { 
@@ -25,5 +29,6 @@ div.hero-unit h1 {
     font-weight:bold;
   color:#000000;
 }
+
 
 @import "bootstrap-responsive";
