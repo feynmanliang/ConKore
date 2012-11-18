@@ -17,4 +17,4 @@
 // locations.js
 // locations_show.js
 // locations_index.js
-// index.js
+// index_map.js
