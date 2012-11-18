@@ -1,6 +1,8 @@
 %h3 #{@trick.title}
 %p
-  By 
+  Rated
+  = @trick.rating
+  by 
   = link_to @trick.user.name, user_path(@trick.user.id)
   at 
   = link_to @trick.location.title, location_path(@trick.location.id)

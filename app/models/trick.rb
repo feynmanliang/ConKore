@@ -8,6 +8,10 @@ class Trick < ActiveRecord::Base
 
   default_scope order: 'tricks.created_at DESC'
 
+  def rating
+    trick_comments.average(:rating)
+  end
+
   def youtube_thumbnail
     youtube_id = extract_youtube_id(self.video_link)
 
