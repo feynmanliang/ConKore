@@ -4,7 +4,8 @@
 - content_for :javascripts do
   = javascript_include_tag 'locations_show.js'
 
-%h3 #{@location.title}
+.span12
+  %h1 #{@location.title}
 .span6
   = image_tag @location.image_url, :id => :locationImage
 :javascript
@@ -17,11 +18,12 @@
 .span12
   %p
     Description: #{@location.description}
-  %h4 Tricks at this location
+  %h4 Tricks (#{@tricks.count})
   %ul.thumbnails
     - @tricks.each do |trick|
       %li.span2
         .thumbnail
-          %h4= link_to trick.title, location_trick_path(trick)
+          %h4= link_to (trick.title + ' - ' + trick.rating.to_s[0..3]), location_trick_path(trick)
+          %p= link_to trick.user.name, user_path(trick.user)
           = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
   = link_to 'Add a Trick', new_location_trick_path(@location) , class: "btn btn-primary"

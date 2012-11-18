@@ -1,6 +1,6 @@
 %h3 #{@trick.title}
 %p
-  Rating: #{@trick.rating}
+  Rating: #{@trick.rating.to_s[0..3]}
   .progress
     .bar{:style => "width: #{@trick.rating * 10}%"}
   By 

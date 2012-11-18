@@ -4,7 +4,8 @@
 - content_for :javascripts do
   = javascript_include_tag 'locations_index.js'
 
-%h3 Locations
+.span8
+  %h3 Locations #{link_to 'New Location', new_location_path, class: "btn btn-primary"}
 
 :javascript
   var json = #{@locations.to_json}
@@ -12,12 +13,10 @@
 %div#map_canvas{:style => "width: 60%;height: 450px;", :class => "span4"}
 
 %div.span4
-  %h3#name
-  %h4#description
   = image_tag "", id: "imag"
-  %br/
+  %h3#name
+  %p#description
   %br/
   %button#more{:class => "btn btn-primary"}
   %br/
   %br/
-  = link_to 'New Location', new_location_path, class: "btn btn-primary"
