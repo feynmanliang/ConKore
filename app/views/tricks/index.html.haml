@@ -3,7 +3,7 @@
 %div.span12
   %ul.thumbnails
     - @tricks.each do |trick|
-      %li.span3
+      %li.span2
         .thumbnail
           %h4= link_to (trick.title + ' - ' + trick.rating.to_s[0..3]), location_trick_path(trick.location, trick)
           %p 
