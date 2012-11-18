@@ -30,6 +30,7 @@
         %td
           %b Wheels
         %td= @user.wheels
+.clearfix
 
 .span6
   %h4 Tricks (#{@user.tricks.count})
@@ -43,7 +44,6 @@
             at
             = link_to trick.location.title, location_path(trick.location)
           = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick.location, trick)
-
 
 .span5
   %h4 Areas Skated

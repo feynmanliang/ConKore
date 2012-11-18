@@ -1,8 +1,7 @@
 %h3 #{@trick.title} #{link_to "share on facebook", {:controller => :tricks, :action => :post_fb, :params => { :trick_id => @trick.id }}, :class => 'btn btn-primary'}
 %p
-  Rating: #{@trick.rating.to_s[0..3]}
   .progress
-    .bar{:style => "width: #{@trick.rating * 10}%"}
+    .bar{:style => "width: #{@trick.rating * 10}%"} Rating: #{@trick.rating.to_s[0..3]} out of 10.0
   By 
   = link_to @trick.user.name, user_path(@trick.user.id)
   at 
