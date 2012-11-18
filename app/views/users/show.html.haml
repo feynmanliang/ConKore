@@ -1,9 +1,10 @@
 %h3 #{@user.name}
 
 %h4 Tricks
-%ul
+.span12
+%ul.thumbnails
   - @tricks.each do |trick|
-    %li
-      = image_tag trick.youtube_thumbnail
-      %br/
-      = link_to trick.title, location_trick_path(trick)
+    %li.span2
+      .thumbnail
+        %h4= link_to trick.title, location_trick_path(trick)
+        = link_to image_tag(trick.youtube_thumbnail), location_trick_path(trick)
